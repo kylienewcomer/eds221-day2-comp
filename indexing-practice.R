@@ -90,3 +90,49 @@ fruit <- data.frame(fruit = c("apple", "banana", "peach"),
 
 fruit [1,2]
 fruit[1,]
+
+fruit[2,1] <- "pineapple"
+
+x <- 1:10
+x[c(1,1,1)]
+x[c(3,1,5)]
+
+#exclude elements
+x[-10]
+x[-1:-3]
+
+#logical vectors
+x[c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE)]
+
+x[x > 3]
+
+#subsetting and assigning multiple values
+
+x <- 1:5
+x[c(1,2)] <- 2:3
+x[]
+
+x[-1] <- 4:1
+x[]
+
+# subset row in data frames based on conditions(logical subsetting)
+library(car)
+mtcars[mtcars$gear == 5, ]
+
+mtcars[mtcars$gear == 5 & mtcars$cyl == 4, ]
+
+# shorthand
+subset(mtcars, gear == 5)
+subset(mtcars, gear == 5 & cyl == 4)
+
+# remove columns
+
+df <- data.frame(x = 1:3,
+                 y = 3:1,
+                 z = c("a", "b", "c"))
+#df$z <- NULL
+
+df[c("x", "y")]
+
+df[setdiff(names(df), "z")]
+
