@@ -1,0 +1,11 @@
+---
+title: "r-py-data-types"
+format: html
+---
+
+```{r}
+dogs <- c("teddy", "khora", "waffle", "banjo")
+
+typeof(dogs)
+```
+
